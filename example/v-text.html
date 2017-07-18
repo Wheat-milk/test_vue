@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>HelloWorld</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="../assets/js/vue.js"></script>
+</head>
+
+<body>
+  <h1>第4节：v-text & v-html</h1>
+
+  <hr>
+
+  <div id="app">
+    <span>{{message}}</span>
+    <span v-text="message"></span>
+    <span v-html="dodo"></span>
+  </div>
+
+  <script>
+    var app = new Vue({
+      el: "#app",
+      data: {
+        message:'Hello world!',
+        dodo:'<h2>Hello world!</h2>'
+      }
+    });
+  </script>
+</body>
+
+
+</html>

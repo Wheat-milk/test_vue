@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>v-bind</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="../assets/js/vue.js"></script>
+</head>
+
+<body>
+  <h1>第7节：v-bind 指令</h1>
+
+  <hr>
+
+  <div id="app" class="">
+    <p><img width="200" v-bind:src="imgSrc"></p>
+    <p><a :href="webUrl" target="_blank">跳转</a></p>
+    <hr>
+    <div :class="className">1、绑定class</div>
+    <div :class="{classA:isOk}">2、绑定class中的判断</div>
+    <div :class="[classA,classB]">3、绑定class中的数组</div>
+    <div :class="[isOk?classA:classB,classC]">4、绑定class中的三元运算符</div>
+    <hr>
+    <div>
+      <input type="checkbox" id="isOk" v-model="isOk">
+      <label for="isOk">isOk:{{isOk}}</label>
+    </div>
+    <hr>
+    <div :style="{color:red,fontSize:font}">5、绑定Style</div>
+    <div :style="styleObject">6、绑定Style对象</div>
+
+  </div>
+  <style>
+    .classA {
+      color: red
+    }
+
+    .classB {
+      font-size: 150%
+    }
+
+    .classC {
+      text-decoration: underline
+    }
+  </style>
+  <script>
+    var app = new Vue({
+      el: "#app",
+      data: {
+        message: 'Hello World',
+        imgSrc: "https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1498031408&di=6562938a6185c3e4a07d2900ecf39bde&src=http://img.25pp.com/uploadfile/soft/images/2015/0802/20150802112645687.jpg",
+        webUrl: "http://www.baidu.com",
+        className: "classA",
+        isOk: true,
+        classA: 'classA',
+        classB: 'classB',
+        classC: "classC",
+        red:"red",
+        font:"20px",
+        styleObject:{
+          color:"green",
+          fontSize:'24px'
+        }
+      }
+    })
+  </script>
+</body>
+
+
+</html>

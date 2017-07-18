@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>第3节：Vue.set全局操作</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="../assets/js/vue.js"></script>
+</head>
+
+<body>
+  <h1>第3节：Vue.set全局操作</h1>
+
+  <hr>
+
+  <div id="app">
+    {{count}}
+    <ul>
+      <li v-for='item in arr'>
+        {{item}}
+      </li>
+    </ul>
+  </div>
+  <p>
+    <button onclick="add()">add</button>
+  </p>
+  <script>
+    function add() {
+      // Vue.set(outData,'count',2)
+      // app.count++
+      // outData.count++
+      // app.arr[1] = 'ddd'
+      Vue.set(app.arr, 1, 'dddddd')
+    }
+
+    var outData = {
+      count: 1,
+      // goods: 'var'
+      arr: ['aaa', 'bbb', 'ccc']
+    }
+    var app = new Vue({
+      el: "#app",
+      data: outData
+    })
+  </script>
+</body>
+
+
+</html>

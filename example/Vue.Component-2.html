@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>第7节：Component 组件props 属性设置</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="../assets/js/vue.js"></script>
+</head>
+
+<body>
+  <h1>第7节：Component 组件props 属性设置</h1>
+
+  <hr>
+
+  <div id="app">
+    <wheat :here="ddd"></wheat>
+  </div>
+
+
+  <script>
+    var app = new Vue({
+      el: "#app",
+      data: {
+        ddd: 'China22'
+      },
+      components: {
+        "wheat": {
+          template: `<div style="color:green">Weat from {{ here }}</div>`,
+          props: ['here']
+        }
+      }
+    })
+  </script>
+</body>
+
+
+</html>

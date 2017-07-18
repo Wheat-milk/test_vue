@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>第2节：Vue.extend构造器的延伸</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="../assets/js/vue.js"></script>
+</head>
+
+<body>
+  <h1>第2节：Vue.extend构造器的延伸</h1>
+
+  <hr>
+  <milk></milk>
+
+  <script>
+    var milkExtend = Vue.extend({
+      template: "<p><a :href='milkURL'>{{milkName}}</a></p>",
+      data: function () {
+        return {
+          milkName: "Wheat-milk",
+          milkURL: "http://www.zmlaycx.com"
+        }
+      }
+    })
+
+    new milkExtend().$mount("milk");
+  </script>
+</body>
+
+
+</html>

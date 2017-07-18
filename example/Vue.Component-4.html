@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>第9节：Component 标签</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="../assets/js/vue.js"></script>
+</head>
+
+<body>
+  <h1>第9节：Component 标签</h1>
+
+  <hr>
+
+  <div id="app">
+    <component :is="who"></component>
+    <button @click="changeConponenet">changeConponenet</button>
+  </div>
+
+  <script>
+    var componentA = {
+      template: `<div style="color:red">I'm componentA</div>`
+    }
+    var componentB = {
+      template: `<div style="color:green">I'm componentB</div>`
+    }
+    var componentC = {
+      template: `<div style="color:blue">I'm componentC</div>`
+    }
+    var app = new Vue({
+      el: "#app",
+      data: {
+        who: 'componentB'
+      },
+      components: {
+        "componentA": componentA,
+        "componentB": componentB,
+        "componentC": componentC
+      },
+      methods: {
+        changeConponenet: function () {
+          if (this.who === "componentA") {
+            this.who = "componentB"
+          } else if (this.who === "componentB") {
+            this.who = "componentC"
+          } else {
+            this.who = "componentA"
+          }
+        }
+      }
+    })
+  </script>
+</body>
+
+
+</html>

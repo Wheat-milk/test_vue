@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>HelloWorld</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="../assets/js/vue.js"></script>
+</head>
+
+<body>
+  <h1>第2节：v-if v-else v-show 指令</h1>
+
+  <hr>
+
+  <div id="app">
+    <div v-show="isLogin">你好，登录成功</div>
+    <div v-else>请登录</div>
+  </div>
+
+  <script>
+    var app = new Vue({
+      el: "#app",
+      data: {
+        isLogin: false,
+        isPass: false
+      }
+    })
+  </script>
+</body>
+
+
+</html>

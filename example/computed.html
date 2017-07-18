@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>第2节：computed Option 计算选项</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="../assets/js/vue.js"></script>
+</head>
+
+<body>
+  <h1>第2节：computed Option 计算选项</h1>
+
+  <hr>
+
+  <div id="app">
+    <p>{{newPrice}}</p>
+    <ul>
+      <li v-for='item in reversNews'>
+        {{item.title}} -- {{item.date}}
+      </li>
+    </ul>
+  </div>
+
+  <script>
+    var newslist=[
+      {title:'辽宁舰7月或赴香港 台军方：绕台就是“挑衅”',date:'2017/3/24'},
+      {title:'“复兴号”高铁今日首发：时速400公里 座位更宽敞',date:'2017/3/25'},
+      {title:'村支书涉案千万，获澳门临时居留权后仍被驱逐出境',date:'2017/3/26'},
+      {title:'雄安开展万米地下调查：地上地下 打造两个雄安',date:'2017/3/27'},
+      {title:'2016年人均快递费支出287.4元 数量突破300亿件',date:'2017/3/28'},
+    ]
+    var app = new Vue({
+      el: "#app",
+      data: {
+        price: 100,
+        newslist: newslist
+      },
+      computed: {
+        newPrice: function () {
+          return this.price = '￥' + this.price + '元'
+        },
+        reversNews:function(){
+          return this.newslist.reverse()
+        }
+      }
+    })
+  </script>
+</body>
+
+
+</html>

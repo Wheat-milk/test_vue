@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>第4节：内置组件 -slot讲解</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="../assets/js/vue.js"></script>
+</head>
+
+<body>
+  <h1>第4节：内置组件 -slot讲解</h1>
+
+  <hr>
+
+  <div id="app">
+    <milk></milk>
+  </div>
+
+  <template id="tep">
+    <p>博客地址：</p>
+    <p>网名：</p>
+    <p>技术：</p>
+  </template>
+
+  <script>
+    var milk = {
+      template: "tep"
+    }
+    var app = new Vue({
+      el: "#app",
+      data: {
+        milkData: {
+          blogUrl: 'http://zmlaycx.com',
+          netName: '麦香牛奶',
+          skill: 'web前段'
+        }
+      },
+      components: {
+        "milk": milk
+      }
+    })
+  </script>
+</body>
+
+
+</html>

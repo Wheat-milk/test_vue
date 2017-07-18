@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>第5节：Template 制作模版</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="../assets/js/vue.js"></script>
+</head>
+
+<body>
+  <h1>第5节：Template 制作模版</h1>
+
+  <hr>
+
+  <div id="app">
+    {{message}}
+  </div>
+  <template id="dd2">
+    <h2 style="color:blue">我是template标签模板</h2>
+  </template>
+
+  <script type="x-template" id="dd3">
+    <h2 style="color:blue">我是script标签模板</h2>
+  </script>
+
+  <script>
+    var app = new Vue({
+      el: "#app",
+      data: {
+        message: 'Hello World'
+      },
+      template: "#dd3"
+
+      // template:`
+      //   <h2 style="color:red">我是选项模板</h2>
+      // `
+    })
+  </script>
+</body>
+
+
+</html>

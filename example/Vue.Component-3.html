@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>第8节：Component 父子组件关系</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="../assets/js/vue.js"></script>
+</head>
+
+<body>
+  <h1>第8节：Component 父子组件关系</h1>
+
+  <hr>
+
+  <div id="app">
+    <wheat></wheat>
+  </div>
+
+
+  <script>
+    var milk = {
+      template: `<p style="color:blue">like milk</p>`
+    }
+    var weatComponent = {
+      template: `
+      <div>
+        <p>Wheat & milk</p>
+        <milk></milk>
+      </div>      
+      `,
+      components: {
+        "milk": milk
+      }
+    }
+
+
+    var app = new Vue({
+      el: "#app",
+      data: {
+        ddd: 'China22'
+      },
+      components: {
+        "wheat": weatComponent
+      }
+
+    })
+  </script>
+</body>
+
+
+</html>

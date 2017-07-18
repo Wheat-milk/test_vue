@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>第4节：Watch 选项 监控数据</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="../assets/js/vue.js"></script>
+</head>
+
+<body>
+  <h1>第4节：Watch 选项 监控数据</h1>
+
+  <hr>
+
+  <div id="app">
+    <p>今日温度：{{ wendu }} ℃ </p>
+    <p>穿衣建议：{{chuanyi}}</p>
+    <p><button @click="add">升高</button> <button @click="subtract">降低</button></p>
+  </div>
+
+  <script>
+    var chuanyiArray=["T恤短袖","夹克长裙","棉衣羽绒服"]
+
+
+    var app = new Vue({
+      el: "#app",
+      data: {
+        wendu: 14,
+        chuanyi: '夹克长裙'
+      },
+      methods: {
+        add: function () {
+          this.wendu += 5
+        },
+        subtract: function () {
+          this.wendu -= 5
+        }
+      },
+      // watch: {
+      //   wendu: function (newVal, oldVal) {
+      //     if (newVal >= 26) {
+      //       this.chuanyi = chuanyiArray[0]
+      //     } else if (newVal < 26 && newVal > 0) {
+      //       this.chuanyi = chuanyiArray[1]
+      //     } else {
+      //       this.chuanyi = chuanyiArray[2]
+      //     }
+      //   }
+      // }
+    })
+
+
+    app.$watch("wendu",function(newVal,oldVal){
+      if (newVal >= 26) {
+            this.chuanyi = chuanyiArray[0]
+          } else if (newVal < 26 && newVal > 0) {
+            this.chuanyi = chuanyiArray[1]
+          } else {
+            this.chuanyi = chuanyiArray[2]
+          }
+    })
+  </script>
+</body>
+
+
+</html>
